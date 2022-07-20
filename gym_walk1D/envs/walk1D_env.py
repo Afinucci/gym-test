@@ -14,15 +14,12 @@ class walk1DEnv(gym.Env):
   LEFT = 0
   RIGHT = 1
 
-  def __init__(self, grid_size=4):
+  def __init__(self, grid_size=10):
     # Size of the 1D-grid
     self.grid_size = grid_size
     # Initialize the agent at the middle of the grid. Please change the number 2 hereafter if the size of the grid changes!
-    if grid_size % 2 == 0:
-      self.agent_pos = grid_size/2
-    else:
-      self.agent_pos = round(grid_size/2,0) + 1 
-
+    self.agent_pos = grid_size - 5
+    
     # Define action and observation space
     # They must be gym.spaces objects
     # Example when using discrete actions, we have two: left and right
@@ -38,10 +35,7 @@ class walk1DEnv(gym.Env):
     :return: (np.array) 
     """
     # Initialize the agent at the right of the grid
-    if self.grid_size % 2 == 0:
-      self.agent_pos = self.grid_size/2
-    else:
-      self.agent_pos = round(grid_size/2,0) + 1 
+    self.agent_pos = grid_size - 5
     # here we convert to float32 to make it more general (in case we want to use continuous actions)
     return np.array([self.agent_pos]).astype(np.float32)
   
