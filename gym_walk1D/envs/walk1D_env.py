@@ -7,7 +7,7 @@ class walk1DEnv(gym.Env):
   metadata = {'render.modes': ['human']}
 
   def __init__(self):
-    self.action_space = spaces.Discrete(3) # Right=1; Left=-1; Do Nothing=0
+    self.action_space = np.array([-1,0,1]) # Right=1; Left=-1; Do Nothing=0
     self.observation_space = np.array([-1,-1,0,1,1])  # Environment: (-1,-1,0,1,1)
   
   def step(self, action):
