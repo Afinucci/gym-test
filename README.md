@@ -1,1 +1,1 @@
-# gym_test
+# gym-test
