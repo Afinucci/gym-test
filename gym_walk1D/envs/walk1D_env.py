@@ -13,13 +13,13 @@ class walk1DEnv(gym.Env):
   def step(self, action):
     # remember that the state is the index of the vector
     if action == 2: #moving right
-      state += 1
+      self.state += 1
       reward = observation_space[state]
     elif action == 1: # moving left
-      state += -1
+      self.state += -1
       reward = observation_space[state]
     elif action == 0: # not moving
-      state += 0
+      self.state += 0
       reward = observation_space[state]
     
     if reward == 2:
@@ -30,7 +30,7 @@ class walk1DEnv(gym.Env):
       info = {}
     return state, reward, done, info
   def reset(self):
-    state = 2 # the state represent also the index of the vector that in turn is the environment
+    self.state = 2 # the state represent also the index of the vector that in turn is the environment
     return state
   def render(self, mode='human', close=False):
     environment = np.zeros(5,)
