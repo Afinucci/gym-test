@@ -38,7 +38,10 @@ class walk1DEnv(gym.Env):
     :return: (np.array) 
     """
     # Initialize the agent at the right of the grid
-    self.agent_pos = self.grid_size - 2
+    if grid_size % 2 == 0:
+      self.agent_pos = grid_size/2
+    else:
+      self.agent_pos = round(grid_size/2,0) + 1 
     # here we convert to float32 to make it more general (in case we want to use continuous actions)
     return np.array([self.agent_pos]).astype(np.float32)
   
