@@ -14,7 +14,7 @@ class walk1DEnv(gym.Env):
   LEFT = 0
   RIGHT = 1
 
-  def __init__(self, grid_size=5):
+  def __init__(self, grid_size=4):
     # Size of the 1D-grid
     self.grid_size = grid_size
     # Initialize the agent at the middle of the grid. Please change the number 2 hereafter if the size of the grid changes!
