@@ -18,7 +18,10 @@ class walk1DEnv(gym.Env):
     # Size of the 1D-grid
     self.grid_size = grid_size
     # Initialize the agent at the middle of the grid. Please change the number 2 hereafter if the size of the grid changes!
-    self.agent_pos = grid_size - 2
+    if grid_size % 2 == 0:
+      self.agent_pos = grid_size/2
+    else:
+      self.agent_pos = round(grid_size/2,0) + 1 
 
     # Define action and observation space
     # They must be gym.spaces objects
