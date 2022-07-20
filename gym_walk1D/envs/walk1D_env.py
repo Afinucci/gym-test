@@ -56,7 +56,7 @@ class walk1DEnv(gym.Env):
     # Null reward everywhere except when reaching the goal (left of the grid)
     #reward = 1 if self.agent_pos == self.grid_size else 0
     
-    if (self.agent_pos > 2) & (self.action != 0):
+    if (self.agent_pos > 2) & (action != 0):
       reward = 1
     else:
       reward = -1
