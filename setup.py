@@ -1,5 +1,5 @@
 from setuptools import setup
 
-setup(name='walk1D_v0',
+setup(name='gym_walk1D',
       version='0.0.1',
       install_requires=['gym'])
